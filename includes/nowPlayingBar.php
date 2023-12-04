@@ -22,7 +22,28 @@ $(document).ready(function() {
 });
 
 function setTrack(trackId, newPlaylist, play) {
-  audioElement.setTrack("assets/music/unholy_ushuu_flip.mp3");
+  
+  $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
+    
+    var track = JSON.parse(data);
+    
+    $(".trackName span").text(track.title);
+
+    $.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data) {
+      var artist = JSON.parse(data);
+
+      $(".artistName span").text(artist.name);
+    });
+
+    $.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album }, function(data) {
+      var album = JSON.parse(data);
+
+      $(".albumLink img").attr("src", album.artworkPath);
+    });
+
+    audioElement.setTrack(track.path);
+    audioElement.play();
+  });
 
   if(play) {
     this.audio.play();
@@ -52,15 +73,15 @@ function pauseSong() {
     <div id="nowPlayingLeft">
       <div class="cotent">
         <span class="albumLink">
-          <img src="https://images.surfacemag.com/app/uploads/2021/09/01040757/drake-certified-lover-boy-damien-hirst-album-artwork.jpg" class="albumArtwork" alt="">
+          <img src="" class="albumArtwork" alt="Cover">
         </span>
         <div class="trackInfo">
           <span class="trackName">
-            <span>7AM on Bridle Path</span>
+            <span></span>
           </span>
 
           <span class="artistName">
-            <span>Drake</span>
+            <span></span>
           </span>
         </div>
       </div>

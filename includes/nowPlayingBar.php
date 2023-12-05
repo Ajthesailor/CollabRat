@@ -72,9 +72,23 @@ function timeFromOffset(mouse, progressBar) {
 	audioElement.setTime(seconds);
 }
 
+function nextSong() {
+  if(currentIndex == currentPlaylist.length - 1) {
+    currentIndex = 0;
+  }
+  else {
+    currentIndex++;
+  }
+
+  var trackToPlay = currentPlaylist[currentIndex];
+  setTrack(trackToPlay, currentPlaylist, true);
+}
+
 function setTrack(trackId, newPlaylist, play) {
   
   $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
+
+    currentIndex = currentPlaylist.indexOf(trackId);
     
     var track = JSON.parse(data);
     
@@ -168,7 +182,7 @@ function pauseSong() {
 
 
             <!-- Next -->
-            <button class="controlButton next" title="Next Button">
+            <button class="controlButton next" title="Next Button" onclick="nextSong()">
             
             <img src="assets/images/icons/next2.png" alt="Next">
             <!-- Repeat -->

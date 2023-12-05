@@ -177,7 +177,7 @@ function pauseSong() {
           <!-- Shuffle -->
           <button class="controlButton shuffle" title="Shuffle Button">
             
-              <img src="assets/images/icons/shuffle2.png" alt="Shuffle">
+              <img src="assets/images/icons/shuffle.png" alt="Shuffle">
             <!-- Previous -->
             <button class="controlButton previous" title="Previous Button">
             

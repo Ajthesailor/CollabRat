@@ -170,13 +170,11 @@ function setTrack(trackId, newPlaylist, play) {
     });
 
     audioElement.setTrack(track);
-    playSong();
-  });
 
-  if(play) {
-    this.audio.play();
+    if(play == true) {
+      playSong();
   }
-  
+  });
 }
 
 function playSong() {

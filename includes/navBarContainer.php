@@ -1,28 +1,30 @@
 <div id="navBarContainer">
     <nav class="navBar"> 
-    <a href="index.php" class="logo">
+    <span role="link" tabindex="0" onclick="openPage('index.php')" class="logo">
       <img src="assets/images/icons/logo.png" alt="Logo">
-    </a>
-    <a href="index.php" class="navItemLink" style="font-weight: 700; margin-bottom: 15px; font-size: 15px; letter-spacing: 1px;">Home</a>
+    </span>
+    <span class="navItemLink" role="link" tabindex="0" onclick="openPage('index.php')" style="font-weight: 700; margin-bottom: 15px; font-size: 15px; letter-spacing: 1px;">Home</span>
 
     <div class="group">
 
       <div class="navItem">
-        <a href="search.php" class="navItemLink">Search <img src="assets/images/icons/search.png" alt="Search" class="icon"></a>
+        <span role='link' tabindex='0' onclick='openPage("search.php")' class="navItemLink">
+        Search 
+        <img src="assets/images/icons/search.png" alt="Search" class="icon"></span>
       </div>
     </div>
 
     <div class="group">
       <div class="navItem">
-          <a href="browse.php" class="navItemLink">Browse</a>
+        <span role="link" tabindex="0" onclick="openPage('browse.php')" class="navItemLink">Browse</span>
       </div>
 
       <div class="navItem">
-        <a href="yourMusic.php" class="navItemLink">Your Library</a>
+        <span role="link" tabindex="0" onclick="openPage('yourMusic.php')" class="navItemLink">Your Library</span>
       </div>
 
       <div class="navItem">
-        <a href="profile.php" class="navItemLink">Profile</a>
+        <span role="link" tabindex="0" onclick="openPage('profile.php')" class="navItemLink">Profile</span>
       </div>
     </div>
 

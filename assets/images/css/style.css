@@ -364,3 +364,44 @@ body {
 .tracklistRow:hover .trackCount {
   visibility: hidden;
 }
+
+.artistInfo {
+  text-align: center;
+}
+
+.artistInfo button {
+  color: #FCFAF1;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: #EC1242;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: 2px solid #EC1242;
+  border-radius: 500px;
+  padding: 15px;
+  min-width: 130px;
+}
+
+.artistInfo button:hover {
+  background-color: #CACACA;
+  color: #EC1242;
+  border: 2px solid #CACACA;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #939393;
+  margin-bottom: 20px;
+}
+
+.tracklistContainer h2,
+.gridViewContainer h2 {
+  text-align: center;
+}
+
+[role="link"] {
+  cursor: pointer;
+}
+
+[role="link"]:hover {
+  color: #EC1242;
+}

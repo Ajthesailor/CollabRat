@@ -460,3 +460,54 @@ input:focus {
   font-size: 16px;
   font-weight: 200;
 }
+
+.buttonItems .button {
+  display: block;
+  margin: 0 auto 20px auto;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: 2px solid #EC1242;
+  border-radius: 500px;
+  color: #FCFAF1;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: #EC1242;
+  padding: 15px;
+  min-width: 130px;
+}
+
+.buttonItems button:hover {
+  background-color: #CACACA;
+  color: #EC1242;
+  border: 2px solid #CACACA;
+}
+
+.playlistContainer {
+  padding: 10px 0;
+}
+
+/* Playlist */
+
+.playlistImage {
+  border: 3px solid #404040;
+  padding: 10px;
+}
+
+.rightSection button {
+  color: #FCFAF1;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: transparent;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: 2px solid #EC1242;
+  border-radius: 500px;
+  padding: 15px;
+  min-width: 130px;
+  font-size: xx-small;
+}
+.rightSection button:hover {
+  
+  color: #EC1242;
+  border: 2px solid #EC1242;
+}

@@ -11,7 +11,7 @@ var timer;
 
 // Encode the URL
 function openPage(url) {
-  
+
   if(timer != null) {
     clearTimeout(timer);
   }
@@ -24,6 +24,40 @@ function openPage(url) {
   $("#mainContent").load(encodedUrl);
   $("body").scrollTop(0);
   history.pushState(null, null, url); //URL bar switch
+}
+
+function createPlaylist() {
+  
+  var popup = prompt("Please enter the name of your playlist");
+  
+  if(popup != null) {
+    
+    $.post("includes/handlers/ajax/createPlaylist.php", {name: popup, username: userLoggedIn }).done(function(error) {
+      if(error != "") {
+
+        alert(error);
+        return;
+      }
+      
+      openPage("yourMusic.php");
+    });
+  }
+}
+
+function deletePlaylist(playlistId) {
+  var prompt = confirm("Are you sure you want to delete this playlist?");
+
+  if(prompt) {
+    $.post("includes/handlers/ajax/deletePlaylist.php", { playlistId: playlistId }).done(function(error) {
+      if(error != "") {
+
+        alert(error);
+        return;
+      }
+     
+      openPage("yourMusic.php");
+    });;
+  }
 }
 
 function formatTime(seconds) {

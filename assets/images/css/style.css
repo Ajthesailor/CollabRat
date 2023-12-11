@@ -527,7 +527,7 @@ input:focus {
   padding: 12px 20px;
   box-sizing: border-box;
   font-weight: 400;
-  color: rgba(147, 147, 147, 0.8);
+  color: rgba(147, 147, 147, 0.945);
   cursor: pointer;
   height: 40px;
   background-color: #282828;

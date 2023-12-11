@@ -11,7 +11,11 @@ html, body {
   display: table;
   height: 100%;
   width: 100%;
+  background-color: rgba(147, 147, 147, 0.84);
+  background-blend-mode: multiply;
 }
+
+
 
 #loginContainer * {
   color: #FCFAF1;

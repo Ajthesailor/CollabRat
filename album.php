@@ -91,3 +91,6 @@ $artist = $album->getArtist();
   
 
 </nav>
+
+<!-- Duration Calculator -->
+<div id="album-duration" class="albumDuration"></div>

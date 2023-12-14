@@ -43,7 +43,7 @@ $(function() {
   <ul class="tracklist">
 
     <?php
-    $songsQuery = mysqli_query($con, "SELECT id FROM songs WHERE title LIKE '%$term%'");
+    $songsQuery = mysqli_query($con, "SELECT id FROM Songs WHERE title LIKE '%$term%'");
     
     if(mysqli_num_rows($songsQuery) == 0) {
       echo "<span class='noResults'>No songs found matching " . $term . "</spsan>";

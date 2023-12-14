@@ -21,7 +21,7 @@
 
 		public function getSongIds() {
 
-      $albumQuery = mysqli_query($this->con, "SELECT id FROM songs WHERE artist='$this->id' ORDER BY plays DESC");
+      $albumQuery = mysqli_query($this->con, "SELECT id FROM Songs WHERE artist='$this->id' ORDER BY plays DESC");
 
       $array = array();
 

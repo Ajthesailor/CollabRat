@@ -1,5 +1,5 @@
 <?php
-$songQuery = mysqli_query ($con, "SELECT id FROM songs ORDER BY RAND() LIMIT 10");
+$songQuery = mysqli_query ($con, "SELECT id FROM Songs ORDER BY RAND() LIMIT 10");
 
 $resultArray = array();
 
@@ -95,7 +95,7 @@ function nextSong() {
   else {
     currentIndex++;
   }
-
+  
   var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
   setTrack(trackToPlay, currentPlaylist, true);
 }
@@ -152,7 +152,7 @@ function setTrack(trackId, newPlaylist, play) {
   pauseSong();
 
   $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
-
+    
     var track = JSON.parse(data);
     
     $(".trackName span").text(track.title);

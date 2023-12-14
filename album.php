@@ -1,4 +1,3 @@
-<!-- Header -->
 <?php 
 include("includes/includedFiles.php");
 
@@ -10,9 +9,8 @@ else {
 }
 
 $album = new Album($con, $albumId);
-
 $artist = $album->getArtist();
-
+$artistId = $artist->getId();
 ?>
 
 <div class="entityInfo">
@@ -22,7 +20,7 @@ $artist = $album->getArtist();
 
   <div class="rightSection">
     <h2><?php echo $album->getTitle();?></h2>
-    <p>By <?php echo $artist->getName();?></p>
+    <p role="link" tabindex="0" onclick="openPage('artist.php?id=<?php echo $artistId; ?>')">By <?php echo $artist->getName(); ?></p>
     <?php
     $numberOfSongs = $album->getNumberOfSongs();
     if ($numberOfSongs === 1) {
@@ -45,7 +43,6 @@ $artist = $album->getArtist();
     foreach($songIdArray as $songId) {
       
       $albumSong = new Song($con, $songId);
-
       $albumArtist = $albumSong->getArtist();
 
       echo "<li class='tracklistRow'>
@@ -69,12 +66,10 @@ $artist = $album->getArtist();
                 <span class='duration'>" . $albumSong->getDuration() . "</span>
               </div>
             </li>";
-      $i++;
-
-
-
+      $i = $i + 1;
 
     }
+
     ?>
     <script>
       var tempSongIds = '<?php echo json_encode($songIdArray); ?>';
@@ -91,6 +86,3 @@ $artist = $album->getArtist();
   
 
 </nav>
-
-<!-- Duration Calculator -->
-<div id="album-duration" class="albumDuration"></div>
